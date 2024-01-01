@@ -1,0 +1,124 @@
+<%-include('head.ejs');-%>
+        <!-- Reservation Start -->
+        <section class="vh-80 background-radial-gradient overflow-hidden">
+            <div class="container px-4 py-5 px-md-5 text-center text-lg-start my-5">
+                <div class="row gx-lg-5 align-items-center mb-5">
+                  <div class="col-lg-6 mb-5 mb-lg-0" style="z-index: 10">
+                    <h1 class="my-5 display-5 fw-bold ls-tight" style="color: hsl(218, 81%, 95%)">
+                      Don't be late ! <br/><br />
+                      <span style="color: hsl(218, 81%, 75%)">Good Food Takes Time
+                        <br> Order Now!</span>
+                    </h1>
+                    <p class="mb-4 opacity-70" style="color: hsl(218, 81%, 85%)">
+                     
+                      
+
+                    </p>
+                  </div>
+            
+                  <div class="col-lg-6 mb-5 mb-lg-0 position-relative">
+                    <div id="radius-shape-1" class="position-absolute rounded-circle shadow-5-strong"></div>
+                    <div id="radius-shape-2" class="position-absolute shadow-5-strong"></div>
+            
+                    <div class="vh-80 card bg-glass">
+                      <div class="card-body px-4 py-5 px-md-5">
+                        <form  method="post" action="/signin">
+                          <!--for college id -->
+                          <h2 class="mb-4 opacity-70" style="color: hsl(41, 83%, 55%)"> Login</h2>
+                          <div class="form-outline mb-4">
+                            <input type="text" name="cid" id="form3Example3" class="form-control" placeholder="College ID" />
+                        
+                          </div>
+                          
+                          
+                          
+                            
+                          <!-- Password input -->
+                          <div class="form-outline mb-3">
+                            <input type="password" name="password" id="form3Example4" style="width: 90%; align-items:left;" autocomplete="current-password"  required=""  placeholder="Password" />
+                            &nbsp;
+                            <!-- <input type="checkbox" onclick="myFunction()">  Show Password -->
+                            <img src="https://media.geeksforgeeks.org/wp-content/uploads/20210917145551/eye.png"
+                                                 width="8%"
+                                                 height="10%"
+                                                 style=
+                                                     "display: inline; 
+                                                     margin-left: -1.5%; 
+                                                     vertical-align: middle"
+                                                 id="togglePassword">
+                          </div>
+            
+            
+                          <!-- Submit button -->
+                          <button type="submit" name="b1" class="btn btn-primary btn-block mb-4">
+                            Sign up
+                          </button> 
+                          <!--Sign in-->
+                          <br>
+                          Not Registered ? <a href="booking">Sign Up</a>
+
+                          <% if(userStatus === "Already Registered !"){%>
+
+                            <p style="color: red;"> <%=userStatus%></p>
+                            <%}else{%>
+                             <p style="color: green;"> <%=userStatus%></p>
+                              <%}%>
+
+                          <br><br><br>
+                          <!-- Register buttons -->
+                          <div class="text-center">
+                            <p>or sign up with:</p>
+                            <button type="button" class="btn btn-link btn-floating mx-1">
+                              <i class="fab fa-facebook-f"></i>
+                            </button>
+            
+                            <button type="button" class="btn btn-link btn-floating mx-1">
+                              <i class="fab fa-google"></i>
+                            </button>
+            
+                            <button type="button" class="btn btn-link btn-floating mx-1">
+                              <i class="fab fa-twitter"></i>
+                            </button>
+            
+                            <button type="button" class="btn btn-link btn-floating mx-1">
+                              <i class="fab fa-github"></i>
+                            </button>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <script>
+              const togglePassword =
+                    document.querySelector('#togglePassword');
+       
+              const password = 
+                    document.querySelector('#form3Example4');
+       
+              togglePassword.
+              addEventListener('click', function (e) {
+       
+                  // Toggle the type attribute 
+                  const type = password.getAttribute(
+                      'type') === 'password' ? 'text' : 'password';
+                  password.setAttribute('type', type);
+       
+                  // Toggle the eye slash icon 
+                  if (togglePassword.src.match(
+      "https://media.geeksforgeeks.org/wp-content/uploads/20210917150049/eyeslash.png")) {
+                      togglePassword.src =
+      "https://media.geeksforgeeks.org/wp-content/uploads/20210917145551/eye.png";
+                  } else {
+                      togglePassword.src =
+      "https://media.geeksforgeeks.org/wp-content/uploads/20210917150049/eyeslash.png";
+                  }
+              }); 
+          </script>
+        
+        <!-- Reservation Start -->
+        
+        <%-include('foot.ejs');-%>
